@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "ShootARound",
+			"Path": "D:\\Unreal Projects\\Kodobur\\ShootARound\\Source\\ShootARound.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "ShootARoundEditor",
+			"Path": "D:\\Unreal Projects\\Kodobur\\ShootARound\\Source\\ShootARoundEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

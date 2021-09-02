@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"D:\\Unreal Projects\\Kodobur\\ShootARound\\Source\\ShootARound\\ShootARound.Build.cs",
+		"D:\\Unreal Projects\\Kodobur\\ShootARound\\Source\\ShootARound.Target.cs",
+		"D:\\Unreal Projects\\Kodobur\\ShootARound\\Source\\ShootARoundEditor.Target.cs"
+	],
+	"EngineVersion": "4.26.1"
+}

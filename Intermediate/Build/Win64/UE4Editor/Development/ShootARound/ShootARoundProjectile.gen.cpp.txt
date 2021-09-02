@@ -1,0 +1,5 @@
+D:\Unreal Projects\Kodobur\ShootARound\Intermediate\Build\Win64\UE4Editor\Development\ShootARound\Definitions.ShootARound.h
+C:\Program Files\Epic Games\UE_4.26\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
+C:\Program Files\Epic Games\UE_4.26\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
+D:\Unreal Projects\Kodobur\ShootARound\Source\ShootARound/ShootARoundProjectile.h
+D:\Unreal Projects\Kodobur\ShootARound\Intermediate\Build\Win64\UE4Editor\Inc\ShootARound\ShootARoundProjectile.generated.h

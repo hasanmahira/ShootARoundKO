@@ -1,0 +1,3 @@
+D:\Unreal Projects\Kodobur\ShootARound\Intermediate\Build\Win64\UE4Editor\Development\ShootARound\Definitions.ShootARound.h
+D:\Unreal Projects\Kodobur\ShootARound\Source\ShootARound\BaseWeapon.h
+D:\Unreal Projects\Kodobur\ShootARound\Intermediate\Build\Win64\UE4Editor\Inc\ShootARound\BaseWeapon.generated.h
