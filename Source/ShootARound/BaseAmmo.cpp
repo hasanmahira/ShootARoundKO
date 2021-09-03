@@ -9,6 +9,9 @@ ABaseAmmo::ABaseAmmo()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	// Set the values of varibles
+	ammoType = EWeaponType::E_AssultRifle;
+	ammoAmount = 20;
 }
 
 // Called when the game starts or when spawned

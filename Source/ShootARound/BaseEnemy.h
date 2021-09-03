@@ -19,6 +19,15 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+
+	UFUNCTION(BlueprintCallable)
+		void TakeDamage(float _damage);
+
+	//The current health of enemy
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Enemy")
+		float health;
+
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;

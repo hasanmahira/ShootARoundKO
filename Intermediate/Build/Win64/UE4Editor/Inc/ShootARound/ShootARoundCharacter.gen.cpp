@@ -103,6 +103,20 @@ void EmptyLinkFunctionForGeneratedCodeShootARoundCharacter() {}
 		static void NewProp_bUsingMotionControllers_SetBit(void* Obj);
 		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bUsingMotionControllers;
 #if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_isSprinting_MetaData[];
+#endif
+		static void NewProp_isSprinting_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_isSprinting;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_isZoomedIn_MetaData[];
+#endif
+		static void NewProp_isZoomedIn_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_isZoomedIn;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_health_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_health;
+#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_weapon_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_weapon;
@@ -272,6 +286,41 @@ void EmptyLinkFunctionForGeneratedCodeShootARoundCharacter() {}
 	}
 	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AShootARoundCharacter_Statics::NewProp_bUsingMotionControllers = { "bUsingMotionControllers", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Bool , RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(uint8), sizeof(AShootARoundCharacter), &Z_Construct_UClass_AShootARoundCharacter_Statics::NewProp_bUsingMotionControllers_SetBit, METADATA_PARAMS(Z_Construct_UClass_AShootARoundCharacter_Statics::NewProp_bUsingMotionControllers_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AShootARoundCharacter_Statics::NewProp_bUsingMotionControllers_MetaData)) };
 #if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AShootARoundCharacter_Statics::NewProp_isSprinting_MetaData[] = {
+		{ "Category", "Gameplay" },
+		{ "Comment", "/** Determines if the character sprinting */" },
+		{ "ModuleRelativePath", "ShootARoundCharacter.h" },
+		{ "ToolTip", "Determines if the character sprinting" },
+	};
+#endif
+	void Z_Construct_UClass_AShootARoundCharacter_Statics::NewProp_isSprinting_SetBit(void* Obj)
+	{
+		((AShootARoundCharacter*)Obj)->isSprinting = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AShootARoundCharacter_Statics::NewProp_isSprinting = { "isSprinting", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AShootARoundCharacter), &Z_Construct_UClass_AShootARoundCharacter_Statics::NewProp_isSprinting_SetBit, METADATA_PARAMS(Z_Construct_UClass_AShootARoundCharacter_Statics::NewProp_isSprinting_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AShootARoundCharacter_Statics::NewProp_isSprinting_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AShootARoundCharacter_Statics::NewProp_isZoomedIn_MetaData[] = {
+		{ "Category", "Gameplay" },
+		{ "Comment", "/** Determines if the character zoomed in to weapon */" },
+		{ "ModuleRelativePath", "ShootARoundCharacter.h" },
+		{ "ToolTip", "Determines if the character zoomed in to weapon" },
+	};
+#endif
+	void Z_Construct_UClass_AShootARoundCharacter_Statics::NewProp_isZoomedIn_SetBit(void* Obj)
+	{
+		((AShootARoundCharacter*)Obj)->isZoomedIn = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AShootARoundCharacter_Statics::NewProp_isZoomedIn = { "isZoomedIn", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AShootARoundCharacter), &Z_Construct_UClass_AShootARoundCharacter_Statics::NewProp_isZoomedIn_SetBit, METADATA_PARAMS(Z_Construct_UClass_AShootARoundCharacter_Statics::NewProp_isZoomedIn_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AShootARoundCharacter_Statics::NewProp_isZoomedIn_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AShootARoundCharacter_Statics::NewProp_health_MetaData[] = {
+		{ "Category", "Health" },
+		{ "Comment", "/** Determines the health of the character */" },
+		{ "ModuleRelativePath", "ShootARoundCharacter.h" },
+		{ "ToolTip", "Determines the health of the character" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AShootARoundCharacter_Statics::NewProp_health = { "health", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AShootARoundCharacter, health), METADATA_PARAMS(Z_Construct_UClass_AShootARoundCharacter_Statics::NewProp_health_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AShootARoundCharacter_Statics::NewProp_health_MetaData)) };
+#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AShootARoundCharacter_Statics::NewProp_weapon_MetaData[] = {
 		{ "Category", "Weapon" },
 		{ "Comment", "/** The weapon the player is holding */" },
@@ -296,6 +345,9 @@ void EmptyLinkFunctionForGeneratedCodeShootARoundCharacter() {}
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AShootARoundCharacter_Statics::NewProp_FireSound,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AShootARoundCharacter_Statics::NewProp_FireAnimation,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AShootARoundCharacter_Statics::NewProp_bUsingMotionControllers,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AShootARoundCharacter_Statics::NewProp_isSprinting,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AShootARoundCharacter_Statics::NewProp_isZoomedIn,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AShootARoundCharacter_Statics::NewProp_health,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AShootARoundCharacter_Statics::NewProp_weapon,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AShootARoundCharacter_Statics::StaticCppClassTypeInfo = {
@@ -325,7 +377,7 @@ void EmptyLinkFunctionForGeneratedCodeShootARoundCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AShootARoundCharacter, 3370173478);
+	IMPLEMENT_CLASS(AShootARoundCharacter, 3530237564);
 	template<> SHOOTAROUND_API UClass* StaticClass<AShootARoundCharacter>()
 	{
 		return AShootARoundCharacter::StaticClass();

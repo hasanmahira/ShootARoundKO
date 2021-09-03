@@ -87,6 +87,18 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
 		uint8 bUsingMotionControllers : 1;
 
+	/** Determines if the character sprinting */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
+		bool isSprinting;
+
+	/** Determines if the character zoomed in to weapon */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
+		bool isZoomedIn;
+	
+	/** Determines the health of the character */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Health)
+		float health;
+	
 	/** The weapon the player is holding */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Weapon)
 		ABaseWeapon* weapon;
@@ -117,8 +129,23 @@ protected:
 	 */
 	void LookUpAtRate(float Rate);
 
+	/** Begin Sprinting*/
+	void Sprint();
+
+	/** Stop Sprinting*/
+	void StopSprinting();
+	
+	/** Begin Zoom-in*/
+	void ZoomIn();
+
+	/** Stop Zoom-in*/
+	void StopZoom();
+
 	/** Reloads the wepaon*/
 	void ReloadWeapon();
+	
+	/** Cause the player take damge*/
+	void TakeDamage(float _damageAmount);
 
 	/**Triggers the popup notification that that the player fully out of ammo */
 	//UFUNCTION(CPF_BlueprintAssignable, Category = "HUD")

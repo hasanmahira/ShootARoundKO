@@ -15,6 +15,9 @@ ABaseWeapon::ABaseWeapon()
 	totalAmmo = 64;
 	clipAmmo = 12;
 	reloadTime = 1.0f;
+
+	weaponType = EWeaponType::E_AssultRifle;
+
 }
 
 // Called when the game starts or when spawned

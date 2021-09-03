@@ -11,6 +11,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "MotionControllerComponent.h"
 #include "XRMotionControllerBase.h" // for FXRMotionControllerBase::RightHandSourceId
+#include "GameFramework/CharacterMovementComponent.h"
 
 DEFINE_LOG_CATEGORY_STATIC(LogFPChar, Warning, All);
 
@@ -27,6 +28,11 @@ AShootARoundCharacter::AShootARoundCharacter()
 	BaseLookUpRate = 45.f;
 
 	// set the values for variables
+	isSprinting = false;
+	isZoomedIn = false;
+
+	health = 1.0f;
+
 	weapon = nullptr;
 
 	// Create a CameraComponent	
@@ -120,6 +126,14 @@ void AShootARoundCharacter::SetupPlayerInputComponent(class UInputComponent* Pla
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
 
+	// Bind sprint events
+	PlayerInputComponent->BindAction("Sprint", IE_Pressed, this, &AShootARoundCharacter::Sprint);
+	PlayerInputComponent->BindAction("Sprint", IE_Released, this, &AShootARoundCharacter::StopSprinting);
+	
+	// Bind Zoom-In events
+	PlayerInputComponent->BindAction("ZoomIn", IE_Pressed, this, &AShootARoundCharacter::ZoomIn);
+	PlayerInputComponent->BindAction("ZoomIn", IE_Released, this, &AShootARoundCharacter::StopZoom);
+
 	// Bind fire event
 	PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &AShootARoundCharacter::OnFire);
 	PlayerInputComponent->BindAction("Reload", IE_Pressed, this, &AShootARoundCharacter::ReloadWeapon);
@@ -206,23 +220,68 @@ void AShootARoundCharacter::OnFire()
 	}
 }
 
+
+void AShootARoundCharacter::Sprint()
+{
+	if (auto characterMovement = GetCharacterMovement())
+	{
+		characterMovement->MaxWalkSpeed = 1500.0f;
+	}
+}
+
+void AShootARoundCharacter::StopSprinting()
+{
+	if (auto characterMovement = GetCharacterMovement())
+	{
+		characterMovement->MaxWalkSpeed = 600.0f;
+	}
+}
+
+void AShootARoundCharacter::ZoomIn()
+{
+	if (auto firstPersonCamera = GetFirstPersonCameraComponent())
+	{
+		firstPersonCamera->SetFieldOfView(50.0f);
+		isZoomedIn = true;
+	}
+}
+
+void AShootARoundCharacter::StopZoom()
+{
+	if (auto firstPersonCamera = GetFirstPersonCameraComponent())
+	{
+		firstPersonCamera->SetFieldOfView(90.0f);
+		isZoomedIn = false;
+	}
+}
+
 void AShootARoundCharacter::ReloadWeapon()
 {
 	if (weapon)
 	{
-		if (weapon->clipAmmo!= weapon->maxClipAmmo)
+		if (weapon->clipAmmo != weapon->maxClipAmmo)
 		{
 			if (weapon->totalAmmo - (weapon->maxClipAmmo - weapon->clipAmmo) >= 0)
 			{
 				weapon->totalAmmo -= (weapon->maxClipAmmo - weapon->clipAmmo);
-					weapon->clipAmmo = weapon->maxClipAmmo;
+				weapon->clipAmmo = weapon->maxClipAmmo;
 			}
 			else
 			{
 				weapon->clipAmmo += weapon->totalAmmo;
-					weapon->totalAmmo = 0;
+				weapon->totalAmmo = 0;
 			}
 		}
+	}
+}
+
+
+void AShootARoundCharacter::TakeDamage(float _damageAmount)
+{
+	health -= _damageAmount;
+	if (health < 0.0f)
+	{
+		health = 0.0f;
 	}
 }
 

@@ -1,0 +1,7 @@
+D:\Unreal Projects\Kodobur\ShootARound\Intermediate\Build\Win64\UE4Editor\Development\ShootARound\Definitions.ShootARound.h
+C:\Program Files\Epic Games\UE_4.26\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
+C:\Program Files\Epic Games\UE_4.26\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
+D:\Unreal Projects\Kodobur\ShootARound\Source\ShootARound/BaseAmmo.h
+D:\Unreal Projects\Kodobur\ShootARound\Source\ShootARound/BaseWeapon.h
+D:\Unreal Projects\Kodobur\ShootARound\Intermediate\Build\Win64\UE4Editor\Inc\ShootARound\BaseWeapon.generated.h
+D:\Unreal Projects\Kodobur\ShootARound\Intermediate\Build\Win64\UE4Editor\Inc\ShootARound\BaseAmmo.generated.h

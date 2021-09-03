@@ -1,0 +1,26 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-ShootARound-2957.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"D:\Unreal Projects\Kodobur\ShootARound\Intermediate\Build\Win64\ShootARoundEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"D:\Unreal Projects\Kodobur\ShootARound\Intermediate\Build\Win64\UE4Editor\Development\ShootARound\BaseAmmo.cpp.obj"
+"D:\Unreal Projects\Kodobur\ShootARound\Intermediate\Build\Win64\UE4Editor\Development\ShootARound\BaseWeapon.cpp.obj"
+"D:\Unreal Projects\Kodobur\ShootARound\Intermediate\Build\Win64\UE4Editor\Development\ShootARound\ShootARound.cpp.obj"
+"D:\Unreal Projects\Kodobur\ShootARound\Intermediate\Build\Win64\UE4Editor\Development\ShootARound\ShootARoundCharacter.cpp.obj"
+"D:\Unreal Projects\Kodobur\ShootARound\Intermediate\Build\Win64\UE4Editor\Development\ShootARound\ShootARoundGameMode.cpp.obj"
+"D:\Unreal Projects\Kodobur\ShootARound\Intermediate\Build\Win64\UE4Editor\Development\ShootARound\ShootARoundHUD.cpp.obj"
+"D:\Unreal Projects\Kodobur\ShootARound\Intermediate\Build\Win64\UE4Editor\Development\ShootARound\ShootARoundProjectile.cpp.obj"
+"D:\Unreal Projects\Kodobur\ShootARound\Intermediate\Build\Win64\UE4Editor\Development\ShootARound\BaseAmmo.gen.cpp.obj"
+"D:\Unreal Projects\Kodobur\ShootARound\Intermediate\Build\Win64\UE4Editor\Development\ShootARound\BaseWeapon.gen.cpp.obj"
+"D:\Unreal Projects\Kodobur\ShootARound\Intermediate\Build\Win64\UE4Editor\Development\ShootARound\ShootARound.init.gen.cpp.obj"
+"D:\Unreal Projects\Kodobur\ShootARound\Intermediate\Build\Win64\UE4Editor\Development\ShootARound\ShootARoundCharacter.gen.cpp.obj"
+"D:\Unreal Projects\Kodobur\ShootARound\Intermediate\Build\Win64\UE4Editor\Development\ShootARound\ShootARoundGameMode.gen.cpp.obj"
+"D:\Unreal Projects\Kodobur\ShootARound\Intermediate\Build\Win64\UE4Editor\Development\ShootARound\ShootARoundHUD.gen.cpp.obj"
+"D:\Unreal Projects\Kodobur\ShootARound\Intermediate\Build\Win64\UE4Editor\Development\ShootARound\ShootARoundProjectile.gen.cpp.obj"
+"D:\Unreal Projects\Kodobur\ShootARound\Intermediate\Build\Win64\UE4Editor\Development\ShootARound\Default.rc2.res"
+/OUT:"D:\Unreal Projects\Kodobur\ShootARound\Intermediate\Build\Win64\UE4Editor\Development\ShootARound\UE4Editor-ShootARound-2957.lib"
+/INCLUDE:IMPLEMENT_MODULE_ShootARound

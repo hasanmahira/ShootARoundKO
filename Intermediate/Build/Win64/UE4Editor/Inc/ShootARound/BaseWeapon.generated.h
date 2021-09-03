@@ -13,10 +13,10 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define SHOOTAROUND_BaseWeapon_generated_h
 
-#define ShootARound_Source_ShootARound_BaseWeapon_h_12_SPARSE_DATA
-#define ShootARound_Source_ShootARound_BaseWeapon_h_12_RPC_WRAPPERS
-#define ShootARound_Source_ShootARound_BaseWeapon_h_12_RPC_WRAPPERS_NO_PURE_DECLS
-#define ShootARound_Source_ShootARound_BaseWeapon_h_12_INCLASS_NO_PURE_DECLS \
+#define ShootARound_Source_ShootARound_BaseWeapon_h_20_SPARSE_DATA
+#define ShootARound_Source_ShootARound_BaseWeapon_h_20_RPC_WRAPPERS
+#define ShootARound_Source_ShootARound_BaseWeapon_h_20_RPC_WRAPPERS_NO_PURE_DECLS
+#define ShootARound_Source_ShootARound_BaseWeapon_h_20_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesABaseWeapon(); \
 	friend struct Z_Construct_UClass_ABaseWeapon_Statics; \
@@ -25,7 +25,7 @@ public: \
 	DECLARE_SERIALIZER(ABaseWeapon)
 
 
-#define ShootARound_Source_ShootARound_BaseWeapon_h_12_INCLASS \
+#define ShootARound_Source_ShootARound_BaseWeapon_h_20_INCLASS \
 private: \
 	static void StaticRegisterNativesABaseWeapon(); \
 	friend struct Z_Construct_UClass_ABaseWeapon_Statics; \
@@ -34,7 +34,7 @@ public: \
 	DECLARE_SERIALIZER(ABaseWeapon)
 
 
-#define ShootARound_Source_ShootARound_BaseWeapon_h_12_STANDARD_CONSTRUCTORS \
+#define ShootARound_Source_ShootARound_BaseWeapon_h_20_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ABaseWeapon(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ABaseWeapon) \
@@ -47,7 +47,7 @@ private: \
 public:
 
 
-#define ShootARound_Source_ShootARound_BaseWeapon_h_12_ENHANCED_CONSTRUCTORS \
+#define ShootARound_Source_ShootARound_BaseWeapon_h_20_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API ABaseWeapon(ABaseWeapon&&); \
@@ -58,28 +58,28 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ABaseWeapon); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ABaseWeapon)
 
 
-#define ShootARound_Source_ShootARound_BaseWeapon_h_12_PRIVATE_PROPERTY_OFFSET
-#define ShootARound_Source_ShootARound_BaseWeapon_h_9_PROLOG
-#define ShootARound_Source_ShootARound_BaseWeapon_h_12_GENERATED_BODY_LEGACY \
+#define ShootARound_Source_ShootARound_BaseWeapon_h_20_PRIVATE_PROPERTY_OFFSET
+#define ShootARound_Source_ShootARound_BaseWeapon_h_17_PROLOG
+#define ShootARound_Source_ShootARound_BaseWeapon_h_20_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	ShootARound_Source_ShootARound_BaseWeapon_h_12_PRIVATE_PROPERTY_OFFSET \
-	ShootARound_Source_ShootARound_BaseWeapon_h_12_SPARSE_DATA \
-	ShootARound_Source_ShootARound_BaseWeapon_h_12_RPC_WRAPPERS \
-	ShootARound_Source_ShootARound_BaseWeapon_h_12_INCLASS \
-	ShootARound_Source_ShootARound_BaseWeapon_h_12_STANDARD_CONSTRUCTORS \
+	ShootARound_Source_ShootARound_BaseWeapon_h_20_PRIVATE_PROPERTY_OFFSET \
+	ShootARound_Source_ShootARound_BaseWeapon_h_20_SPARSE_DATA \
+	ShootARound_Source_ShootARound_BaseWeapon_h_20_RPC_WRAPPERS \
+	ShootARound_Source_ShootARound_BaseWeapon_h_20_INCLASS \
+	ShootARound_Source_ShootARound_BaseWeapon_h_20_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define ShootARound_Source_ShootARound_BaseWeapon_h_12_GENERATED_BODY \
+#define ShootARound_Source_ShootARound_BaseWeapon_h_20_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	ShootARound_Source_ShootARound_BaseWeapon_h_12_PRIVATE_PROPERTY_OFFSET \
-	ShootARound_Source_ShootARound_BaseWeapon_h_12_SPARSE_DATA \
-	ShootARound_Source_ShootARound_BaseWeapon_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
-	ShootARound_Source_ShootARound_BaseWeapon_h_12_INCLASS_NO_PURE_DECLS \
-	ShootARound_Source_ShootARound_BaseWeapon_h_12_ENHANCED_CONSTRUCTORS \
+	ShootARound_Source_ShootARound_BaseWeapon_h_20_PRIVATE_PROPERTY_OFFSET \
+	ShootARound_Source_ShootARound_BaseWeapon_h_20_SPARSE_DATA \
+	ShootARound_Source_ShootARound_BaseWeapon_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
+	ShootARound_Source_ShootARound_BaseWeapon_h_20_INCLASS_NO_PURE_DECLS \
+	ShootARound_Source_ShootARound_BaseWeapon_h_20_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -89,5 +89,13 @@ template<> SHOOTAROUND_API UClass* StaticClass<class ABaseWeapon>();
 #undef CURRENT_FILE_ID
 #define CURRENT_FILE_ID ShootARound_Source_ShootARound_BaseWeapon_h
 
+
+#define FOREACH_ENUM_EWEAPONTYPE(op) \
+	op(EWeaponType::E_AssultRifle) \
+	op(EWeaponType::E_Pistol) \
+	op(EWeaponType::E_ShoutGun) 
+
+enum class EWeaponType : uint8;
+template<> SHOOTAROUND_API UEnum* StaticEnum<EWeaponType>();
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
