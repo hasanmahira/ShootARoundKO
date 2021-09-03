@@ -2,6 +2,8 @@ D:\Unreal Projects\Kodobur\ShootARound\Intermediate\Build\Win64\UE4Editor\Develo
 C:\Program Files\Epic Games\UE_4.26\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
 C:\Program Files\Epic Games\UE_4.26\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
 D:\Unreal Projects\Kodobur\ShootARound\Source\ShootARound/ShootARoundCharacter.h
+D:\Unreal Projects\Kodobur\ShootARound\Source\ShootARound/BaseWeapon.h
+D:\Unreal Projects\Kodobur\ShootARound\Intermediate\Build\Win64\UE4Editor\Inc\ShootARound\BaseWeapon.generated.h
 C:\Program Files\Epic Games\UE_4.26\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h
 C:\Program Files\Epic Games\UE_4.26\Engine\Source\Runtime\Engine\Classes\GameFramework/CharacterMovementReplication.h
 C:\Program Files\Epic Games\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\CharacterMovementReplication.generated.h

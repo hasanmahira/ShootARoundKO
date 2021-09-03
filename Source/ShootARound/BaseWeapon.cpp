@@ -9,6 +9,12 @@ ABaseWeapon::ABaseWeapon()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	// Set the values of varibles
+	maxTotalAmmo = 100;
+	maxClipAmmo = 12;
+	totalAmmo = 64;
+	clipAmmo = 12;
+	reloadTime = 1.0f;
 }
 
 // Called when the game starts or when spawned

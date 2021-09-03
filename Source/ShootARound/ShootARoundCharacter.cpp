@@ -26,6 +26,9 @@ AShootARoundCharacter::AShootARoundCharacter()
 	BaseTurnRate = 45.f;
 	BaseLookUpRate = 45.f;
 
+	// set the values for variables
+	weapon = nullptr;
+
 	// Create a CameraComponent	
 	FirstPersonCameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("FirstPersonCamera"));
 	FirstPersonCameraComponent->SetupAttachment(GetCapsuleComponent());
@@ -119,6 +122,7 @@ void AShootARoundCharacter::SetupPlayerInputComponent(class UInputComponent* Pla
 
 	// Bind fire event
 	PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &AShootARoundCharacter::OnFire);
+	PlayerInputComponent->BindAction("Reload", IE_Pressed, this, &AShootARoundCharacter::ReloadWeapon);
 
 	// Enable touchscreen input
 	EnableTouchscreenMovement(PlayerInputComponent);
@@ -146,24 +150,40 @@ void AShootARoundCharacter::OnFire()
 		UWorld* const World = GetWorld();
 		if (World != nullptr)
 		{
-			if (bUsingMotionControllers)
+			if (weapon)
 			{
-				const FRotator SpawnRotation = VR_MuzzleLocation->GetComponentRotation();
-				const FVector SpawnLocation = VR_MuzzleLocation->GetComponentLocation();
-				World->SpawnActor<AShootARoundProjectile>(ProjectileClass, SpawnLocation, SpawnRotation);
-			}
-			else
-			{
-				const FRotator SpawnRotation = GetControlRotation();
-				// MuzzleOffset is in camera space, so transform it to world space before offsetting from the character location to find the final muzzle position
-				const FVector SpawnLocation = ((FP_MuzzleLocation != nullptr) ? FP_MuzzleLocation->GetComponentLocation() : GetActorLocation()) + SpawnRotation.RotateVector(GunOffset);
+				if (weapon->clipAmmo > 0)
+				{
+					if (bUsingMotionControllers)
+					{
+						const FRotator SpawnRotation = VR_MuzzleLocation->GetComponentRotation();
+						const FVector SpawnLocation = VR_MuzzleLocation->GetComponentLocation();
+						World->SpawnActor<AShootARoundProjectile>(ProjectileClass, SpawnLocation, SpawnRotation);
+					}
+					else
+					{
+						const FRotator SpawnRotation = GetControlRotation();
+						// MuzzleOffset is in camera space, so transform it to world space before offsetting from the character location to find the final muzzle position
+						const FVector SpawnLocation = ((FP_MuzzleLocation != nullptr) ? FP_MuzzleLocation->GetComponentLocation() : GetActorLocation()) + SpawnRotation.RotateVector(GunOffset);
 
-				//Set Spawn Collision Handling Override
-				FActorSpawnParameters ActorSpawnParams;
-				ActorSpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButDontSpawnIfColliding;
+						//Set Spawn Collision Handling Override
+						FActorSpawnParameters ActorSpawnParams;
+						ActorSpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButDontSpawnIfColliding;
 
-				// spawn the projectile at the muzzle
-				World->SpawnActor<AShootARoundProjectile>(ProjectileClass, SpawnLocation, SpawnRotation, ActorSpawnParams);
+						// spawn the projectile at the muzzle
+						World->SpawnActor<AShootARoundProjectile>(ProjectileClass, SpawnLocation, SpawnRotation, ActorSpawnParams);
+					}
+
+					weapon->clipAmmo -= 1;
+				}
+				else if (weapon->totalAmmo > 0)
+				{
+					ReloadWeapon();
+				}
+				else
+				{
+					//TriggerOutOfAmmoPopup();
+				}
 			}
 		}
 	}
@@ -182,6 +202,26 @@ void AShootARoundCharacter::OnFire()
 		if (AnimInstance != nullptr)
 		{
 			AnimInstance->Montage_Play(FireAnimation, 1.f);
+		}
+	}
+}
+
+void AShootARoundCharacter::ReloadWeapon()
+{
+	if (weapon)
+	{
+		if (weapon->clipAmmo!= weapon->maxClipAmmo)
+		{
+			if (weapon->totalAmmo - (weapon->maxClipAmmo - weapon->clipAmmo) >= 0)
+			{
+				weapon->totalAmmo -= (weapon->maxClipAmmo - weapon->clipAmmo);
+					weapon->clipAmmo = weapon->maxClipAmmo;
+			}
+			else
+			{
+				weapon->clipAmmo += weapon->totalAmmo;
+					weapon->totalAmmo = 0;
+			}
 		}
 	}
 }
@@ -295,6 +335,6 @@ bool AShootARoundCharacter::EnableTouchscreenMovement(class UInputComponent* Pla
 		//PlayerInputComponent->BindTouch(EInputEvent::IE_Repeat, this, &AShootARoundCharacter::TouchUpdate);
 		return true;
 	}
-	
+
 	return false;
 }

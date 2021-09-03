@@ -13,10 +13,10 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define SHOOTAROUND_ShootARoundCharacter_generated_h
 
-#define ShootARound_Source_ShootARound_ShootARoundCharacter_h_20_SPARSE_DATA
-#define ShootARound_Source_ShootARound_ShootARoundCharacter_h_20_RPC_WRAPPERS
-#define ShootARound_Source_ShootARound_ShootARoundCharacter_h_20_RPC_WRAPPERS_NO_PURE_DECLS
-#define ShootARound_Source_ShootARound_ShootARoundCharacter_h_20_INCLASS_NO_PURE_DECLS \
+#define ShootARound_Source_ShootARound_ShootARoundCharacter_h_21_SPARSE_DATA
+#define ShootARound_Source_ShootARound_ShootARoundCharacter_h_21_RPC_WRAPPERS
+#define ShootARound_Source_ShootARound_ShootARoundCharacter_h_21_RPC_WRAPPERS_NO_PURE_DECLS
+#define ShootARound_Source_ShootARound_ShootARoundCharacter_h_21_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAShootARoundCharacter(); \
 	friend struct Z_Construct_UClass_AShootARoundCharacter_Statics; \
@@ -25,7 +25,7 @@ public: \
 	DECLARE_SERIALIZER(AShootARoundCharacter)
 
 
-#define ShootARound_Source_ShootARound_ShootARoundCharacter_h_20_INCLASS \
+#define ShootARound_Source_ShootARound_ShootARoundCharacter_h_21_INCLASS \
 private: \
 	static void StaticRegisterNativesAShootARoundCharacter(); \
 	friend struct Z_Construct_UClass_AShootARoundCharacter_Statics; \
@@ -34,7 +34,7 @@ public: \
 	DECLARE_SERIALIZER(AShootARoundCharacter)
 
 
-#define ShootARound_Source_ShootARound_ShootARoundCharacter_h_20_STANDARD_CONSTRUCTORS \
+#define ShootARound_Source_ShootARound_ShootARoundCharacter_h_21_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AShootARoundCharacter(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AShootARoundCharacter) \
@@ -47,7 +47,7 @@ private: \
 public:
 
 
-#define ShootARound_Source_ShootARound_ShootARoundCharacter_h_20_ENHANCED_CONSTRUCTORS \
+#define ShootARound_Source_ShootARound_ShootARoundCharacter_h_21_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AShootARoundCharacter(AShootARoundCharacter&&); \
@@ -58,7 +58,7 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AShootARoundCharacter); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AShootARoundCharacter)
 
 
-#define ShootARound_Source_ShootARound_ShootARoundCharacter_h_20_PRIVATE_PROPERTY_OFFSET \
+#define ShootARound_Source_ShootARound_ShootARoundCharacter_h_21_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__Mesh1P() { return STRUCT_OFFSET(AShootARoundCharacter, Mesh1P); } \
 	FORCEINLINE static uint32 __PPO__FP_Gun() { return STRUCT_OFFSET(AShootARoundCharacter, FP_Gun); } \
 	FORCEINLINE static uint32 __PPO__FP_MuzzleLocation() { return STRUCT_OFFSET(AShootARoundCharacter, FP_MuzzleLocation); } \
@@ -69,27 +69,27 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AShootARoundCharacter); \
 	FORCEINLINE static uint32 __PPO__L_MotionController() { return STRUCT_OFFSET(AShootARoundCharacter, L_MotionController); }
 
 
-#define ShootARound_Source_ShootARound_ShootARoundCharacter_h_17_PROLOG
-#define ShootARound_Source_ShootARound_ShootARoundCharacter_h_20_GENERATED_BODY_LEGACY \
+#define ShootARound_Source_ShootARound_ShootARoundCharacter_h_18_PROLOG
+#define ShootARound_Source_ShootARound_ShootARoundCharacter_h_21_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	ShootARound_Source_ShootARound_ShootARoundCharacter_h_20_PRIVATE_PROPERTY_OFFSET \
-	ShootARound_Source_ShootARound_ShootARoundCharacter_h_20_SPARSE_DATA \
-	ShootARound_Source_ShootARound_ShootARoundCharacter_h_20_RPC_WRAPPERS \
-	ShootARound_Source_ShootARound_ShootARoundCharacter_h_20_INCLASS \
-	ShootARound_Source_ShootARound_ShootARoundCharacter_h_20_STANDARD_CONSTRUCTORS \
+	ShootARound_Source_ShootARound_ShootARoundCharacter_h_21_PRIVATE_PROPERTY_OFFSET \
+	ShootARound_Source_ShootARound_ShootARoundCharacter_h_21_SPARSE_DATA \
+	ShootARound_Source_ShootARound_ShootARoundCharacter_h_21_RPC_WRAPPERS \
+	ShootARound_Source_ShootARound_ShootARoundCharacter_h_21_INCLASS \
+	ShootARound_Source_ShootARound_ShootARoundCharacter_h_21_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define ShootARound_Source_ShootARound_ShootARoundCharacter_h_20_GENERATED_BODY \
+#define ShootARound_Source_ShootARound_ShootARoundCharacter_h_21_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	ShootARound_Source_ShootARound_ShootARoundCharacter_h_20_PRIVATE_PROPERTY_OFFSET \
-	ShootARound_Source_ShootARound_ShootARoundCharacter_h_20_SPARSE_DATA \
-	ShootARound_Source_ShootARound_ShootARoundCharacter_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
-	ShootARound_Source_ShootARound_ShootARoundCharacter_h_20_INCLASS_NO_PURE_DECLS \
-	ShootARound_Source_ShootARound_ShootARoundCharacter_h_20_ENHANCED_CONSTRUCTORS \
+	ShootARound_Source_ShootARound_ShootARoundCharacter_h_21_PRIVATE_PROPERTY_OFFSET \
+	ShootARound_Source_ShootARound_ShootARoundCharacter_h_21_SPARSE_DATA \
+	ShootARound_Source_ShootARound_ShootARoundCharacter_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
+	ShootARound_Source_ShootARound_ShootARoundCharacter_h_21_INCLASS_NO_PURE_DECLS \
+	ShootARound_Source_ShootARound_ShootARoundCharacter_h_21_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
