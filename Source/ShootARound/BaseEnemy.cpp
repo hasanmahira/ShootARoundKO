@@ -36,7 +36,7 @@ void ABaseEnemy::Tick(float DeltaTime)
 	FVector MovementVector = PlayerLocation - EnemyLocation;
 
 	//FVector Vel = (MovementVector.Normalize() * 0.1f * DeltaTime);
-	FRotator NewRotation = this->GetActorRotation();
+	FRotator NewRotation = myCharacter->GetActorRotation();
 	ETeleportType Teleport = ETeleportType::TeleportPhysics;
 	SetActorLocation(EnemyLocation + (MovementVector * 0.25f * DeltaTime));
 	SetActorRotation(NewRotation, Teleport);
