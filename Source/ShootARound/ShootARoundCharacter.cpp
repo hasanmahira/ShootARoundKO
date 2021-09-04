@@ -35,6 +35,8 @@ AShootARoundCharacter::AShootARoundCharacter()
 
 	weapon = nullptr;
 
+	assaultAmmo = 20;
+
 	// Create a CameraComponent	
 	FirstPersonCameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("FirstPersonCamera"));
 	FirstPersonCameraComponent->SetupAttachment(GetCapsuleComponent());
@@ -275,6 +277,15 @@ void AShootARoundCharacter::ReloadWeapon()
 	}
 }
 
+
+void AShootARoundCharacter::AddAmmo(EWeaponType _weaponType, int _ammoAmount)
+{
+	if (weapon)
+	{
+		//weapon->totalAmmo += _ammoAmount;
+		weapon->totalAmmo += assaultAmmo;
+	}
+}
 
 void AShootARoundCharacter::TakeDamage(float _damageAmount)
 {

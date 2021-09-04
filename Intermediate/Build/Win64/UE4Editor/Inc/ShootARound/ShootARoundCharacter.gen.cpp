@@ -17,6 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeShootARoundCharacter() {}
 	SHOOTAROUND_API UClass* Z_Construct_UClass_AShootARoundCharacter();
 	ENGINE_API UClass* Z_Construct_UClass_ACharacter();
 	UPackage* Z_Construct_UPackage__Script_ShootARound();
+	SHOOTAROUND_API UEnum* Z_Construct_UEnum_ShootARound_EWeaponType();
 	ENGINE_API UClass* Z_Construct_UClass_USkeletalMeshComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USceneComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
@@ -28,6 +29,15 @@ void EmptyLinkFunctionForGeneratedCodeShootARoundCharacter() {}
 	ENGINE_API UClass* Z_Construct_UClass_UAnimMontage_NoRegister();
 	SHOOTAROUND_API UClass* Z_Construct_UClass_ABaseWeapon_NoRegister();
 // End Cross Module References
+	DEFINE_FUNCTION(AShootARoundCharacter::execAddAmmo)
+	{
+		P_GET_ENUM(EWeaponType,Z_Param__weaponType);
+		P_GET_PROPERTY(FIntProperty,Z_Param__ammoAmount);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->AddAmmo(EWeaponType(Z_Param__weaponType),Z_Param__ammoAmount);
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(AShootARoundCharacter::execTakeDamage)
 	{
 		P_GET_PROPERTY(FFloatProperty,Z_Param__damageAmount);
@@ -40,9 +50,51 @@ void EmptyLinkFunctionForGeneratedCodeShootARoundCharacter() {}
 	{
 		UClass* Class = AShootARoundCharacter::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "AddAmmo", &AShootARoundCharacter::execAddAmmo },
 			{ "TakeDamage", &AShootARoundCharacter::execTakeDamage },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_AShootARoundCharacter_AddAmmo_Statics
+	{
+		struct ShootARoundCharacter_eventAddAmmo_Parms
+		{
+			EWeaponType _weaponType;
+			int32 _ammoAmount;
+		};
+		static const UE4CodeGen_Private::FBytePropertyParams NewProp__weaponType_Underlying;
+		static const UE4CodeGen_Private::FEnumPropertyParams NewProp__weaponType;
+		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp__ammoAmount;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UFunction_AShootARoundCharacter_AddAmmo_Statics::NewProp__weaponType_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_AShootARoundCharacter_AddAmmo_Statics::NewProp__weaponType = { "_weaponType", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ShootARoundCharacter_eventAddAmmo_Parms, _weaponType), Z_Construct_UEnum_ShootARound_EWeaponType, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UFunction_AShootARoundCharacter_AddAmmo_Statics::NewProp__ammoAmount = { "_ammoAmount", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ShootARoundCharacter_eventAddAmmo_Parms, _ammoAmount), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AShootARoundCharacter_AddAmmo_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AShootARoundCharacter_AddAmmo_Statics::NewProp__weaponType_Underlying,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AShootARoundCharacter_AddAmmo_Statics::NewProp__weaponType,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AShootARoundCharacter_AddAmmo_Statics::NewProp__ammoAmount,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AShootARoundCharacter_AddAmmo_Statics::Function_MetaDataParams[] = {
+		{ "Comment", "/** Player Gets ammo from pickup*/" },
+		{ "ModuleRelativePath", "ShootARoundCharacter.h" },
+		{ "ToolTip", "Player Gets ammo from pickup" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AShootARoundCharacter_AddAmmo_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AShootARoundCharacter, nullptr, "AddAmmo", nullptr, nullptr, sizeof(ShootARoundCharacter_eventAddAmmo_Parms), Z_Construct_UFunction_AShootARoundCharacter_AddAmmo_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AShootARoundCharacter_AddAmmo_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04080401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AShootARoundCharacter_AddAmmo_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AShootARoundCharacter_AddAmmo_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AShootARoundCharacter_AddAmmo()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AShootARoundCharacter_AddAmmo_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_AShootARoundCharacter_TakeDamage_Statics
 	{
@@ -168,6 +220,10 @@ void EmptyLinkFunctionForGeneratedCodeShootARoundCharacter() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_weapon_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_weapon;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_assaultAmmo_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_assaultAmmo;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -177,6 +233,7 @@ void EmptyLinkFunctionForGeneratedCodeShootARoundCharacter() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_ShootARound,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_AShootARoundCharacter_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_AShootARoundCharacter_AddAmmo, "AddAmmo" }, // 3935455210
 		{ &Z_Construct_UFunction_AShootARoundCharacter_TakeDamage, "TakeDamage" }, // 2062691747
 	};
 #if WITH_METADATA
@@ -380,6 +437,15 @@ void EmptyLinkFunctionForGeneratedCodeShootARoundCharacter() {}
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AShootARoundCharacter_Statics::NewProp_weapon = { "weapon", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AShootARoundCharacter, weapon), Z_Construct_UClass_ABaseWeapon_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AShootARoundCharacter_Statics::NewProp_weapon_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AShootARoundCharacter_Statics::NewProp_weapon_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AShootARoundCharacter_Statics::NewProp_assaultAmmo_MetaData[] = {
+		{ "Category", "Weapon" },
+		{ "Comment", "/** The amount of ammo Riffle */" },
+		{ "ModuleRelativePath", "ShootARoundCharacter.h" },
+		{ "ToolTip", "The amount of ammo Riffle" },
+	};
+#endif
+	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_AShootARoundCharacter_Statics::NewProp_assaultAmmo = { "assaultAmmo", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AShootARoundCharacter, assaultAmmo), METADATA_PARAMS(Z_Construct_UClass_AShootARoundCharacter_Statics::NewProp_assaultAmmo_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AShootARoundCharacter_Statics::NewProp_assaultAmmo_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AShootARoundCharacter_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AShootARoundCharacter_Statics::NewProp_Mesh1P,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AShootARoundCharacter_Statics::NewProp_FP_Gun,
@@ -400,6 +466,7 @@ void EmptyLinkFunctionForGeneratedCodeShootARoundCharacter() {}
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AShootARoundCharacter_Statics::NewProp_isZoomedIn,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AShootARoundCharacter_Statics::NewProp_health,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AShootARoundCharacter_Statics::NewProp_weapon,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AShootARoundCharacter_Statics::NewProp_assaultAmmo,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AShootARoundCharacter_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AShootARoundCharacter>::IsAbstract,
@@ -428,7 +495,7 @@ void EmptyLinkFunctionForGeneratedCodeShootARoundCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AShootARoundCharacter, 3801944723);
+	IMPLEMENT_CLASS(AShootARoundCharacter, 3334589132);
 	template<> SHOOTAROUND_API UClass* StaticClass<AShootARoundCharacter>()
 	{
 		return AShootARoundCharacter::StaticClass();

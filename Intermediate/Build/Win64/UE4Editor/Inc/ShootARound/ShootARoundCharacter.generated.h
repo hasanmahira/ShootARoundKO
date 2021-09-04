@@ -8,6 +8,7 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+enum class EWeaponType : uint8;
 #ifdef SHOOTAROUND_ShootARoundCharacter_generated_h
 #error "ShootARoundCharacter.generated.h already included, missing '#pragma once' in ShootARoundCharacter.h"
 #endif
@@ -16,11 +17,13 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define ShootARound_Source_ShootARound_ShootARoundCharacter_h_21_SPARSE_DATA
 #define ShootARound_Source_ShootARound_ShootARoundCharacter_h_21_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execAddAmmo); \
 	DECLARE_FUNCTION(execTakeDamage);
 
 
 #define ShootARound_Source_ShootARound_ShootARoundCharacter_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execAddAmmo); \
 	DECLARE_FUNCTION(execTakeDamage);
 
 

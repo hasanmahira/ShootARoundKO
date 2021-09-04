@@ -103,6 +103,10 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Weapon)
 		ABaseWeapon* weapon;
 
+	/** The amount of ammo Riffle */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Weapon)
+		int assaultAmmo;
+
 protected:
 
 	/** Fires a projectile. */
@@ -147,6 +151,10 @@ protected:
 	/** Cause the player take damge*/
 	UFUNCTION(BlueprintCallable)
 	void TakeDamage(float _damageAmount);
+
+	/** Player Gets ammo from pickup*/
+	UFUNCTION(BlueprintCallable)
+		void AddAmmo(EWeaponType _weaponType, int _ammoAmount);
 
 	/**Triggers the popup notification that that the player fully out of ammo */
 	//UFUNCTION(CPF_BlueprintAssignable, Category = "HUD")
