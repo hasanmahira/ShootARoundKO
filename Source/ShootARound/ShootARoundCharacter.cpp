@@ -30,12 +30,13 @@ AShootARoundCharacter::AShootARoundCharacter()
 	// set the values for variables
 	isSprinting = false;
 	isZoomedIn = false;
+	assaultAmmo = 20;
 
 	health = 1.0f;
 
-	weapon = nullptr;
+	respawnLocation = FVector(-351.0f, -99.0f, 235.0f);
 
-	assaultAmmo = 20;
+	weapon = nullptr;
 
 	// Create a CameraComponent	
 	FirstPersonCameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("FirstPersonCamera"));
@@ -284,16 +285,32 @@ void AShootARoundCharacter::AddAmmo(EWeaponType _weaponType, int _ammoAmount)
 	{
 		//weapon->totalAmmo += _ammoAmount;
 		weapon->totalAmmo += assaultAmmo;
+		if (weapon->totalAmmo >= weapon->maxTotalAmmo)
+		{
+			weapon->totalAmmo = weapon->maxTotalAmmo;
+		}
 	}
 }
 
 void AShootARoundCharacter::TakeDamage(float _damageAmount)
 {
 	health -= _damageAmount;
-	if (health < 0.0f)
+	if (health <= 0.0f)
 	{
 		health = 0.0f;
+		Die();
 	}
+}
+
+void AShootARoundCharacter::Die()
+{
+	Respwan();
+}
+
+void AShootARoundCharacter::Respwan()
+{
+	health = 1.0f;
+	SetActorLocation(respawnLocation);
 }
 
 void AShootARoundCharacter::OnResetVR()

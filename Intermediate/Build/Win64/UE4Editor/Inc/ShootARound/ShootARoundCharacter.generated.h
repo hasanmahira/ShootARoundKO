@@ -18,12 +18,16 @@ enum class EWeaponType : uint8;
 #define ShootARound_Source_ShootARound_ShootARoundCharacter_h_21_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execAddAmmo); \
+	DECLARE_FUNCTION(execRespwan); \
+	DECLARE_FUNCTION(execDie); \
 	DECLARE_FUNCTION(execTakeDamage);
 
 
 #define ShootARound_Source_ShootARound_ShootARoundCharacter_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execAddAmmo); \
+	DECLARE_FUNCTION(execRespwan); \
+	DECLARE_FUNCTION(execDie); \
 	DECLARE_FUNCTION(execTakeDamage);
 
 

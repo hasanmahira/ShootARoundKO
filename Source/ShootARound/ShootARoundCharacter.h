@@ -99,6 +99,10 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Health)
 		float health;
 	
+	/** Position to respawn caharcter */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Health)
+		FVector respawnLocation;
+	
 	/** The weapon the player is holding */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Weapon)
 		ABaseWeapon* weapon;
@@ -151,6 +155,14 @@ protected:
 	/** Cause the player take damge*/
 	UFUNCTION(BlueprintCallable)
 	void TakeDamage(float _damageAmount);
+	
+	/** Kills player*/
+	UFUNCTION(BlueprintCallable)
+	void Die();
+	
+	/** Respawns player*/
+	UFUNCTION(BlueprintCallable)
+	void Respwan();
 
 	/** Player Gets ammo from pickup*/
 	UFUNCTION(BlueprintCallable)
