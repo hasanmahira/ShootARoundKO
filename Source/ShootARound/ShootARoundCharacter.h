@@ -145,6 +145,7 @@ protected:
 	void ReloadWeapon();
 	
 	/** Cause the player take damge*/
+	UFUNCTION(BlueprintCallable)
 	void TakeDamage(float _damageAmount);
 
 	/**Triggers the popup notification that that the player fully out of ammo */
