@@ -28,8 +28,55 @@ void EmptyLinkFunctionForGeneratedCodeShootARoundCharacter() {}
 	ENGINE_API UClass* Z_Construct_UClass_UAnimMontage_NoRegister();
 	SHOOTAROUND_API UClass* Z_Construct_UClass_ABaseWeapon_NoRegister();
 // End Cross Module References
+	DEFINE_FUNCTION(AShootARoundCharacter::execTakeDamage)
+	{
+		P_GET_PROPERTY(FFloatProperty,Z_Param__damageAmount);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->TakeDamage(Z_Param__damageAmount);
+		P_NATIVE_END;
+	}
 	void AShootARoundCharacter::StaticRegisterNativesAShootARoundCharacter()
 	{
+		UClass* Class = AShootARoundCharacter::StaticClass();
+		static const FNameNativePtrPair Funcs[] = {
+			{ "TakeDamage", &AShootARoundCharacter::execTakeDamage },
+		};
+		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_AShootARoundCharacter_TakeDamage_Statics
+	{
+		struct ShootARoundCharacter_eventTakeDamage_Parms
+		{
+			float _damageAmount;
+		};
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp__damageAmount;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_AShootARoundCharacter_TakeDamage_Statics::NewProp__damageAmount = { "_damageAmount", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ShootARoundCharacter_eventTakeDamage_Parms, _damageAmount), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AShootARoundCharacter_TakeDamage_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AShootARoundCharacter_TakeDamage_Statics::NewProp__damageAmount,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AShootARoundCharacter_TakeDamage_Statics::Function_MetaDataParams[] = {
+		{ "Comment", "/** Cause the player take damge*/" },
+		{ "ModuleRelativePath", "ShootARoundCharacter.h" },
+		{ "ToolTip", "Cause the player take damge" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AShootARoundCharacter_TakeDamage_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AShootARoundCharacter, nullptr, "TakeDamage", nullptr, nullptr, sizeof(ShootARoundCharacter_eventTakeDamage_Parms), Z_Construct_UFunction_AShootARoundCharacter_TakeDamage_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AShootARoundCharacter_TakeDamage_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04080401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AShootARoundCharacter_TakeDamage_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AShootARoundCharacter_TakeDamage_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AShootARoundCharacter_TakeDamage()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AShootARoundCharacter_TakeDamage_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	UClass* Z_Construct_UClass_AShootARoundCharacter_NoRegister()
 	{
@@ -38,6 +85,7 @@ void EmptyLinkFunctionForGeneratedCodeShootARoundCharacter() {}
 	struct Z_Construct_UClass_AShootARoundCharacter_Statics
 	{
 		static UObject* (*const DependentSingletons[])();
+		static const FClassFunctionLinkInfo FuncInfo[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
@@ -127,6 +175,9 @@ void EmptyLinkFunctionForGeneratedCodeShootARoundCharacter() {}
 	UObject* (*const Z_Construct_UClass_AShootARoundCharacter_Statics::DependentSingletons[])() = {
 		(UObject* (*)())Z_Construct_UClass_ACharacter,
 		(UObject* (*)())Z_Construct_UPackage__Script_ShootARound,
+	};
+	const FClassFunctionLinkInfo Z_Construct_UClass_AShootARoundCharacter_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_AShootARoundCharacter_TakeDamage, "TakeDamage" }, // 2062691747
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AShootARoundCharacter_Statics::Class_MetaDataParams[] = {
@@ -358,11 +409,11 @@ void EmptyLinkFunctionForGeneratedCodeShootARoundCharacter() {}
 		"Game",
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
-		nullptr,
+		FuncInfo,
 		Z_Construct_UClass_AShootARoundCharacter_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
-		0,
+		UE_ARRAY_COUNT(FuncInfo),
 		UE_ARRAY_COUNT(Z_Construct_UClass_AShootARoundCharacter_Statics::PropPointers),
 		0,
 		0x008000A4u,
@@ -377,7 +428,7 @@ void EmptyLinkFunctionForGeneratedCodeShootARoundCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AShootARoundCharacter, 3530237564);
+	IMPLEMENT_CLASS(AShootARoundCharacter, 3801944723);
 	template<> SHOOTAROUND_API UClass* StaticClass<AShootARoundCharacter>()
 	{
 		return AShootARoundCharacter::StaticClass();
